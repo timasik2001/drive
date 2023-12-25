@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+<div class="flex-box bottom-block contact-form">
+    <h3 class="form-header">Вход в админ панель</h3>
+        <form acton="" method="post">
+            <div><input type="text" name="login" class="form-field" value placeholder="Логин" required /></div>
+            <div><input type="password" name="password" class="form-field" value placeholder="Пароль" required /></div>
+            <p><input class="btn" type="submit" value="Войти" /></p>
+        </form>
+</div>
+
+{% endblock content %}

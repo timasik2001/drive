@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block title -%}
+    <meta charset="UTF-8">
+    <link type="text/css" href="{{ url_for('static', filename='css.css') }}" rel="stylesheet" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>title</title>
+    {% endif %}
+    {% endblock %}
+</head>
+<body>
+    {% block content -%}
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-column brand">
+                <span class="brand-block">
+                    <span class="brand-logo">
+                        <a href="{{ url_for('index') }}" title="На главную">
+                            <img class="brand-img" src="static/images/drive.png">
+                        </a>
+                    </span>
+                    <a href="{{ url_for('index') }}" class="brand" title="На главную">
+                        <strong class="brand-name">Drive</strong>
+                        <span class="brand-slogan">★ В главных ролях timasik ★</span>
+                    </a>
+                    <span class="menu-phone">
+                        <a class="btn btn-tel" href="tel:+78005553535">
+                            +7 (800) 555-35-35
+                        </a>
+                    </span>
+                </span>
+            </div>
+            <div class="navbar-column navbar-menu">
+                <ul class="menu-block">
+                    <li><a class="btn btn-menu" href="{{ url_for('index') }}">Информация о гонках и трек днях</a></li>
+                    {% if current_user %}
+                    <li><a class="btn btn-menu" href="{{ url_for('profile') }}">Профиль</a></li>
+                    <li><a class="btn btn-menu" href="{{ url_for('logout') }}">Выход</a></li>
+                    {% else %}
+                    <li><a class="btn btn-menu" href="{{ url_for('login') }}">Вход</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+<div class="wrapper">
+
+{% if title -%}
+<h1>{{ title }}</h1>
+{% else -%}
+<h1>title</h1>
+{% endif -%}
+<hr />
+<div class="page">
+
+
+{% endblock content -%}
+</div>
+{% block footer -%}
+    <div class="footer">
+        <p> 2023 <span class="copyright">&nbsp;©&nbsp;</span>"timasik"</p>
+        <p><small> Все права защищены </small></p>
+    </div>
+            
+{% endblock footer -%}
+</div>
+</body>
+</html>

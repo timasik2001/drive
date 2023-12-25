@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+    
+<div class="flex-box bottom-block contact-form">
+    <h3 class="form-header">Вход</h3>
+        <form acton="" method="post">
+
+            <div><input type="text" name="email" class="form-field" value placeholder="Email" required /></div>
+            <div><input type="password" name="password" class="form-field" value placeholder="Пароль" required /></div>
+            <p><input class="btn" type="submit" value="Войти" />Запомнить<input class="btn" type="checkbox" name="remember"></p>
+            <p><a href="{{ url_for('register') }}">Регистрация</a></p>
+        </form>
+</div>
+    
+
+
+{% endblock content %}

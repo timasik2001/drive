@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+{% for u in users %}
+
+    <p>{{ u.id }} {{ u.name }} {{ u.email }}</p>
+{% endfor %}
+<form action="" method="post">
+<input name="id" type="text">
+<input class="btn" type="submit" value="Удалить">
+</form>
+{% endblock content %}
